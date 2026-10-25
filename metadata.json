@@ -1,0 +1,8 @@
+{
+  "name": "KuroAnime",
+  "description": "A premium anime streaming platform with a glassmorphism aesthetic, powered by the Consumet API for real-time trending, search, and streaming content.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

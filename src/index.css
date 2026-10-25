@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Outfit", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-canvas: #07080d;
+  --color-canvas-subtle: #0d0e17;
+  --color-canvas-card: rgba(18, 20, 31, 0.7);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-accent-purple: #8b5cf6;
+  --color-accent-pink: #ec4899;
+  --color-accent-orange: #f97316;
+  --color-accent-blue: #3b82f6;
+  --color-accent-emerald: #10b981;
+}
+
+@layer base {
+  body {
+    background-color: #07080d;
+    color: #f3f4f6;
+    font-family: var(--font-sans);
+  }
+}
+
+/* Glassmorphism primitives */
+.glass-panel {
+  background: rgba(15, 17, 26, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-interactive {
+  background: rgba(18, 20, 32, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(28, 31, 48, 0.85);
+  border-color: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.glass-input:focus {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Ambient dynamic backdrops */
+.ambient-glow-top {
+  background: radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.16) 0%, transparent 55%);
+}
+
+.ambient-glow-side {
+  background: radial-gradient(circle at 90% 40%, rgba(236, 72, 153, 0.10) 0%, transparent 60%);
+}
+
+.ambient-glow-bottom {
+  background: radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+}
+
+/* Scrollbar customization */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07080d;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+/* Subtle image gradient mask */
+.hero-mask {
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
